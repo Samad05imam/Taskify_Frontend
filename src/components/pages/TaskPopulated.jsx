@@ -80,12 +80,10 @@ const TaskPopulated = () => {
                       {task.createdAt === task.updatedAt ? (
                         <>
                           <span>Created: {task.createdAt.slice(0, 10)}</span>
-                          <span>{task.createdAt.slice(11, 16)}</span>
                         </>
                       ) : (
                         <>
                           <span>Updated: {task.updatedAt.slice(0, 10)}</span>
-                          <span>{task.updatedAt.slice(11, 16)}</span>
                         </>
                       )}
                       <span

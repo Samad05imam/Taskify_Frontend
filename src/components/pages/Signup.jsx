@@ -44,13 +44,13 @@ const Signup = () => {
     }
   };
 
-  const { user } = useSelector(store => store.auth)
-  useEffect(() => {
-    if (user) {
-      navigate("/")
-      toast.success("You are already loggedin ! Need to do logout first !")
-    }
-  }, [])
+  // const { user } = useSelector(store => store.auth)
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/")
+  //     toast.success("You are already loggedin ! Need to do logout first !")
+  //   }
+  // }, [])
 
 
   return (

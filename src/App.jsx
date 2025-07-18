@@ -21,7 +21,7 @@ function App() {
         <Route path="/update/:id" element={<EditTask />} />
       </Routes>
 
-      <ToastContainer position="bottom-right" autoClose={1000} />
+      <ToastContainer position="bottom-right" autoClose={1500} />
     </>
   );
 }

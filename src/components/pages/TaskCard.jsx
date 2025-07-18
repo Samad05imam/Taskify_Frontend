@@ -55,7 +55,7 @@ const TaskCard = () => {
                     </span>
                   </div>
                   <p className="text-sm text-slate-400">
-                    Created At: {task.createdAt.slice(0, 10)} • {task.createdAt.slice(11, 16)}
+                    Created At: {task.createdAt.slice(0, 10)}
                   </p>
                 </div>
 

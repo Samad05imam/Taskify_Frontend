@@ -35,14 +35,14 @@ const Login = () => {
       toast.error(error.response.data.message)
     }
   };
-  const {user} = useSelector(store=>store.auth)
-  useEffect(()=>{
-    if(user){
-      navigate("/")
+  // const {user} = useSelector(store=>store.auth)
+  // useEffect(()=>{
+  //   if(user){
+  //     navigate("/")
       
-      toast.success("You are already loggedin ! Need to do logout first !")
-    }
-  },[])
+  //     toast.success("You are already loggedin ! Need to do logout first !")
+  //   }
+  // },[])
 
   return (
     <div className='min-h-screen flex flex-col'>
