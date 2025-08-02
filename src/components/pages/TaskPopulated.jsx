@@ -44,7 +44,7 @@ const TaskPopulated = () => {
         toast.error("Delete failed");
       }
     } catch (err) {
-      toast.error(err.response?.data?.message || "Error deleting task");
+      toast.error(err.res?.data?.message || "Error deleting task");
     }
   };
 

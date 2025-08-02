@@ -6,7 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Avatar, AvatarImage } from '../ui/avatar';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import axios from 'axios';
+  import axiosInstance from "@/utils/axiosInstance";
 import { USER_API_END_POINT } from '@/utils/constant';
 import { setUser } from '../redux/authSlice';
 
@@ -15,19 +15,21 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate()
-  const logoutHandler = async () => {
-    try {
-      const res = await axios.post(`${USER_API_END_POINT}/logout`, {}, { withCredentials: true });
-      if (res.data.success) {
-        dispatch(setUser(null));
-        navigate('/');
-        toast.success(res.data.message);
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error(error.response?.data?.message || "Logout failed");
+
+const logoutHandler = async () => {
+  try {
+    const res = await axiosInstance.post("/user/logout");
+    if (res.data.success) {
+      dispatch(setUser(null));
+      navigate('/');
+      toast.success(res.data.message);
     }
-  };
+  } catch (error) {
+    console.error(error);
+    toast.error(error.response?.data?.message || "Logout failed");
+  }
+};
+
   return (
     <header className="bg-slate-900 text-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">

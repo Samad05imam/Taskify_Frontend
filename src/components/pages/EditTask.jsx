@@ -137,7 +137,6 @@ const EditTask = () => {
           </form>
         </div>
       </main>
-
       <Footer />
     </div>
   );
